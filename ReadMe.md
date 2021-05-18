@@ -11,3 +11,4 @@ These are the things that I learned:
 -The use of for/while loops
 -calling Javascript functions
 
+You can see it live in the browser here- https://tylerkrawczyk.github.io/RPS_Live_Preview/
