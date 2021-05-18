@@ -1,8 +1,13 @@
-# RockPaperScissors
-V3
+This is my final Rock Paper Scissors project for The Odin Project!
 
-[]- Remove logic that plays 5 rounds
-[]- Create three buttons, one for each selection. Add an event listener to the buttons that calls your playRound function with the correct playerSelection every time a button is clicked
-[]- Add a div for displaying results and change all of your console.logs into DOM methods.
-[]-Display the running score, and announce a winner of the game once one player reaches 5 points.
-# Rock_Paper_Scissors
+For the first part of this project, I was tasked to create a Rock, Paper, Scissors game in the console. For the second part, I was tasked to create a physical browser game using HTML, CSS and Javascript utilizing quite a bit of DOM Manipulation. 
+
+These are the things that I learned:
+
+-The relationship between HTML, CSS and Javascript 
+-How to call functions
+-Use of arrow functions (while it was minimal, definitely helpful)
+-Use DOM Manipulation Methods (creating HTML elements in Javascript, editing exisiting HTML methods in Javascript
+-The use of for/while loops
+-calling Javascript functions
+
