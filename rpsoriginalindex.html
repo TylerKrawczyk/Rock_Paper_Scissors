@@ -1,0 +1,106 @@
+<script>
+
+//player vs computer initial score!
+
+let playerScore = 0;
+let computerScore = 0;
+
+
+
+//Plays game
+function game () {
+//Accepts the player's input and converts it to lower case
+    let playerChoice = (prompt('Rock, Paper, or Scissors?')).toLowerCase();
+//Error code if user inputs something other than Rock, Paper or Scissors.
+		if (playerChoice == "rock" || playerChoice == "paper" || playerChoice == "scissors") {
+			console.log("You played: " + playerChoice.charAt(0).toUpperCase()+ playerChoice.slice(1));
+		}
+		else {
+			console.log("Error, user didn't answer Rock, Paper or Scissors");
+		}
+
+//Function that generates a random number between 1 and 3 for computer entry
+	function randomChoice(min, max) {
+		min = Math.ceil(min);
+		max = Math.floor(max);
+		randomNumber = Math.floor(Math.random() * (max - min + 1) + min);
+	}
+
+//Converts random number to rock, paper, or scissors for computer play
+	randomChoice(1, 3);
+
+	if (randomNumber == 1) {
+		computerChoice = "rock";
+		console.log("Computer played: Rock");
+	}
+	else if (randomNumber == 2) {
+		computerChoice = "paper";
+		console.log("Computer played: Paper");
+	}  
+	else if (randomNumber == 3) {
+		computerChoice = "scissors";
+		console.log("Computer played: Scissors");
+	}
+	else {
+		console.log("Error! Please try again!");
+	}
+
+	//Function which runs player input vs. computer input and selects winner
+	function playRound (playerChoice, computerChoice) {
+		if ((playerChoice == "rock" && computerChoice == "scissors") ||
+                   (playerChoice == "scissors" && computerChoice == "paper") ||
+				   (playerChoice == "paper" && computerChoice == "rock")){
+			playerWins();
+		} else if ((computerChoice == "rock" && playerChoice == "scissors") ||
+				   (computerChoice == "scissors" && playerChoice == "paper") ||
+			       (computerChoice == "paper" && playerChoice == "rock")){
+			computerWins();
+		} else {
+			console.log("Tie! Try again.");
+			return;
+		}
+	}
+
+	//Runs the function to determine winner
+	playRound(playerChoice, computerChoice);
+
+	//Functions which report the winner and add to scores
+	function computerWins() {
+		computerScore += 1;
+		console.log("Computer wins! " + computerChoice.charAt(0).toUpperCase()+ computerChoice.slice(1) + " beats " + playerChoice.charAt(0).toUpperCase()+ playerChoice.slice(1));
+	}
+
+	function playerWins() {
+		playerScore += 1;
+		console.log("You Win! " + playerChoice.charAt(0).toUpperCase()+ playerChoice.slice(1) + " beats " + computerChoice.charAt(0).toUpperCase()+ computerChoice.slice(1));
+	}
+
+	console.log("Current Score is Computer: " + computerScore + "   Player: " + playerScore);
+	if (playerScore == 5) {
+		console.log("You win!");
+	}
+	if (computerScore == 5) {
+		console.log("Computer wins :( Try Again!");
+	}
+}
+
+
+//Ends the game at 5 points 
+function checkScore(){
+    if(playerScore == 5){
+        alert('You win the game!')
+        resetScore();
+    }
+    if(computerScore == 5){
+        alert('You lost the game! Try again!')
+        resetScore();
+    }
+}
+
+
+
+
+
+
+
+</script>
